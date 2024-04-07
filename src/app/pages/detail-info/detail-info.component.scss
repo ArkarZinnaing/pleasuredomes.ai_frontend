@@ -1,0 +1,36 @@
+.content {
+    margin-bottom: 100px !important;
+}
+
+.flex {
+    display: flex;
+    gap: 30px;
+}
+
+form {
+    width: 60%;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media only screen and (max-width: 768px) {
+    .steps-wrapper {
+        width: 90% !important;
+    }
+    .steps-wrapper::before {
+        width: 77% !important;
+    }
+    form {
+        width: 90%;
+    }
+    .btn-container {
+        button {
+            width: 100% !important;
+        }
+    }
+}

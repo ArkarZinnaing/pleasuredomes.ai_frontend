@@ -1,0 +1,37 @@
+<div class="content">
+    <div class="person-bg container">
+        <div class="flex">
+            <div class="flex-wrapper">
+                <div class="chat-img">
+                    <img [defaultImage]="env.defaultLoadingImage" [lazyLoad]="aiPerson.image" [errorImage]="env.errorImage">
+                </div>
+                <div class="info">
+                    <h4>{{aiPerson.name}}</h4>
+                    <div class="info-data">
+                        <img src="assets/icons/calendar.png">
+                        <p class="info-txt">{{aiPerson.dob}}</p>
+                    </div>
+                    <div class="flex-container">
+                        <div class="info-data">
+                            <img src="assets/icons/genders.png">
+                            <p class="info-txt">{{aiPerson.gender}}</p>
+                        </div>
+                        <div class="info-data">
+                            <img src="assets/icons/location.png">
+                            <p class="info-txt">{{aiPerson.location}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" (click)="startChat()">Start
+                Chat</button>
+        </div>
+    </div>
+    <div class="container">
+        <p class="desc">
+            {{aiPerson.description}}
+        </p>
+
+    </div>
+</div>
+<app-footer></app-footer>

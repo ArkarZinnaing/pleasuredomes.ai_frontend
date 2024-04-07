@@ -1,0 +1,76 @@
+<div class="content">
+    <div class="container">
+
+        <div class="steps-wrapper">
+            <div class="step active">
+                <div class="circle">
+                    <span>1</span>
+                </div>
+                <p>Personal information</p>
+            </div>
+            <div class="step">
+                <div class="circle">
+                    <span>2</span>
+                </div>
+                <p>Detail information</p>
+            </div>
+            <div class="step">
+                <div class="circle">
+                    <span>3</span>
+                </div>
+                <p>Start Chat</p>
+            </div>
+
+        </div>
+        <br>
+        <h3 class="title_ text-center">Let's find your partner 😍</h3>
+
+        <form [formGroup]="form" (ngSubmit)="submitData()">
+
+            <div class="input-group_">
+                <p class="title_">
+                    <img src="assets/icons/location.png"> Select Location
+                </p>
+                <select name="location" id="location" formControlName="location">
+                    <option disabled value>Select location</option>
+                    <option
+                        *ngFor="let location of countries; let i = index"
+                        [value]="location.name.common">
+                        {{location.name.common}}</option>
+                </select>
+
+            </div>
+
+            <div class="input-group_">
+                <p class="title_">
+                    <img src="assets/icons/calendar.png"> Select Age
+                </p>
+                <div class="age-wrapper">
+                    <div class="age-block" *ngFor="let ageBlock of ageOption " [ngClass]="{ 'block-active': selectedAge === ageBlock }" (click)="selectAge(ageBlock)">
+                        <p>{{ageBlock.desc}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group_">
+                <p class="title_">
+                    <img src="assets/icons/genders.png"> Select Gender
+                </p>
+                <div class="flex">
+                    <div class="radio-container">
+                        <input type="radio" value="male" id="male" name="gender" formControlName="gender">
+                        <label for="male">Male</label>
+                    </div>
+                    <div class="radio-container">
+                        <input type="radio" value="female" id="female" name="gender" formControlName="gender">
+                        <label for="female">Female</label>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-container">
+                <button class="btn btn-primary next-btn" type="submit">Next</button>
+            </div>
+        </form>
+    </div>
+</div>
+<app-footer></app-footer>

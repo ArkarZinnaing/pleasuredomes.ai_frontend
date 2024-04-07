@@ -1,0 +1,60 @@
+<div class="container content">
+    <div class="row">
+        <div class="col-12 col-md-3 overflow-container">
+            <div class="chat-person-container">
+                <div class="chat-img">
+                    <img [defaultImage]="env.defaultLoadingImage" [lazyLoad]="aiPerson.image" [errorImage]="env.errorImage">
+                </div>
+                <p class="ai-name">{{aiPerson.name}}</p>
+                <div class="ai-about">
+                    <p>
+                        {{aiPerson.description}}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-9">
+            <div class="message-chat-container">
+                <div class="message-block" *ngFor="let chat of chatHistory">
+                    <div class="info user-message" *ngIf="chat.user == ''">
+
+                        <div class="message">
+                            {{chat.message}}
+                        </div>
+                    </div>
+                    <div class="info ai-message" *ngIf="chat.user != ''">
+                        <div class="img-wrapper">
+                            <img [defaultImage]="env.defaultLoadingImage" [lazyLoad]="aiPerson.image" [errorImage]="env.errorImage">
+                        </div>
+                        <div class="message">
+                            {{chat.message}}
+                        </div>
+                    </div>
+
+                </div>
+                <div class="message-block">
+                    <div class="info ai-message" *ngIf="isTyping">
+                        <div class="img-wrapper">
+                            <img [defaultImage]="env.defaultLoadingImage" [lazyLoad]="aiPerson.image" [errorImage]="env.errorImage">
+                        </div>
+                        <div class="message">
+                            <div class="wave">
+
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="chat-input-container">
+                <input class="chat-input" placeholder="Type something ..." (keydown.enter)="sendMessage()" #inputField [(ngModel)]="message" />
+                <button class="cht-send-btn btn" (click)="sendMessage()">
+                    <img src="assets/icons/send.png">
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

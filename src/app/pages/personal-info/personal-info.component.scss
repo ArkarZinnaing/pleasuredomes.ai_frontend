@@ -1,0 +1,61 @@
+.age-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .age-block {
+        border: 1px solid #d6d6d6;
+        padding: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        p {
+            margin: 0 !important;
+            font-size: 13px !important;
+        }
+    }
+}
+
+.content {
+    margin-bottom: 100px !important;
+}
+
+.flex {
+    display: flex;
+    gap: 30px;
+}
+
+form {
+    width: 60%;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.block-active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+@media only screen and (max-width: 768px) {
+    .steps-wrapper {
+        width: 90% !important;
+    }
+    .steps-wrapper::before {
+        width: 77% !important;
+    }
+    form {
+        width: 90%;
+    }
+    .age-wrapper {
+        justify-content: normal;
+        gap: 15px;
+    }
+    .btn-container {
+        button {
+            width: 100% !important;
+        }
+    }
+}
